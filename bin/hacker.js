@@ -9,7 +9,6 @@ var Hacker = new Liftoff({
   cwdOpt: 'cwd',
   requireOpt: 'require'
 }).on('require', function (name, module) {
-  // register coffeescript extensions
   if (name === 'coffee-script') {
     module.register();
   }
