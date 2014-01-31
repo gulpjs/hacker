@@ -1,6 +1,8 @@
 # hacker
 > Hack on your project easily.
 
+This is a simple example of how to use [liftoff](https://github.com/tkellen/node-liftoff).
+
 ### How to use it
 
 1. Install globally with `npm install -g hacker`.
