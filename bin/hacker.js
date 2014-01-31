@@ -4,8 +4,8 @@
 var Liftoff = require('liftoff');
 
 var Hacker = new Liftoff({
-  moduleName: 'hacker',
-  configName: 'hackfile',
+  localDeps: ['hacker'],
+  configName: 'hackerfile',
   cwdOpt: 'cwd',
   requireOpt: 'require'
 }).on('require', function (name, module) {
@@ -24,7 +24,7 @@ var Hacker = new Liftoff({
     console.log('SEARCHING FOR:', this.configNameRegex);
     console.log('FOUND CONFIG AT:',  this.configPath);
     console.log('CONFIG BASE DIR:', this.configBase);
-    console.log('YOUR LOCAL MODULE IS LOCATED AT:', this.modulePath);
+    console.log('YOUR LOCAL DEPS ARE LOCATED:', this.depMap);
   }
 
   if(this.configPath) {
