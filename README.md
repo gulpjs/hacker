@@ -11,6 +11,7 @@
 #### Options
 - `--cwd` specify the working directory to start looking for your Hackfile
 - `--require` require an external module before loading your hackfile (e.g. coffee-script)
+- `---verbose` show some debugging info about how hacker is working
 
 ### Examples
 
