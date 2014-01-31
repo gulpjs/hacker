@@ -10,7 +10,7 @@
 
 #### Options
 - `--cwd` specify the working directory to start looking for your Hackfile
-- `--require` require an external module before loading your hackfile (coffee-script)
+- `--require` require an external module before loading your hackfile (e.g. coffee-script)
 
 ### Examples
 
