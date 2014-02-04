@@ -6,6 +6,7 @@ var Liftoff = require('liftoff');
 var Hacker = new Liftoff({
   localDeps: ['hacker'],
   configName: 'hackerfile',
+  processTitle: 'hacker',
   cwdOpt: 'cwd',
   requireOpt: 'require'
 }).on('require', function (name, module) {
@@ -14,8 +15,9 @@ var Hacker = new Liftoff({
   }
 }).on('requireFail', function (name, err) {
   console.log('Unable to load:', name, err);
-}).on('run', function () {
+});
 
+Hacker.launch(function() {
   if(this.args.verbose) {
     console.log('CLI OPTIONS:', this.args);
     console.log('CWD:', this.cwd);
@@ -32,9 +34,8 @@ var Hacker = new Liftoff({
   if(this.configPath) {
     process.chdir(this.configBase);
     require(this.configPath);
+    console.log(this);
   } else {
     console.log('No Hackfile found.');
   }
 });
-
-Hacker.launch();
