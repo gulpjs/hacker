@@ -4,9 +4,10 @@
 var Liftoff = require('liftoff');
 
 var Hacker = new Liftoff({
-  localDeps: ['hacker'],
-  configName: 'hackerfile',
-  processTitle: 'hacker',
+  name: 'hacker',
+//  localDeps: ['hacker'],     // these are assigned
+//  configName: 'hackerfile',  // automatically by
+//  processTitle: 'hacker',    // the "name" option
   cwdOpt: 'cwd',
   requireOpt: 'require'
 }).on('require', function (name, module) {
@@ -19,9 +20,10 @@ var Hacker = new Liftoff({
 
 Hacker.launch(function() {
   if(this.args.verbose) {
+    console.log('LIFTOFF SETTINGS:', this.liftoff);
     console.log('CLI OPTIONS:', this.args);
     console.log('CWD:', this.cwd);
-    console.log('LOCAL MODULES REQUESTED:', this.localRequires);
+    console.log('LOCAL MODULES PRELOADED:', this.preload);
     console.log('EXTENSIONS RECOGNIZED:', this.validExtensions);
     console.log('SEARCHING FOR:', this.configNameRegex);
     console.log('FOUND CONFIG AT:',  this.configPath);
@@ -34,7 +36,6 @@ Hacker.launch(function() {
   if(this.configPath) {
     process.chdir(this.configBase);
     require(this.configPath);
-    console.log(this);
   } else {
     console.log('No Hackfile found.');
   }
