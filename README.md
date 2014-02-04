@@ -1,7 +1,5 @@
 # hacker
-> Hack on your project easily.
-
-This is a simple example of how to use [liftoff](https://github.com/tkellen/node-liftoff).
+> Hack on your project easily. A proof of concept for [node-liftoff](https://github.com/tkellen/node-liftoff).
 
 ### How to use it
 
@@ -13,7 +11,7 @@ This is a simple example of how to use [liftoff](https://github.com/tkellen/node
 #### Options
 - `--cwd` specify the working directory to start looking for your Hackerfile
 - `--require` require an external module before loading your hackerfile (e.g. coffee-script)
-- `---verbose` show some debugging info about how hacker is working
+- `--verbose` show some debugging info about how hacker is working
 
 ### Examples
 
