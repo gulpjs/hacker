@@ -18,25 +18,25 @@ var Hacker = new Liftoff({
   console.log('Unable to load:', name, err);
 });
 
-Hacker.launch(function() {
-  if(this.argv.verbose) {
-    console.log('LIFTOFF SETTINGS:', this.liftoff);
-    console.log('CLI OPTIONS:', this.argv);
-    console.log('CWD:', this.cwd);
-    console.log('LOCAL MODULES PRELOADED:', this.preload);
-    console.log('EXTENSIONS RECOGNIZED:', this.validExtensions);
-    console.log('SEARCHING FOR:', this.configNameRegex);
-    console.log('FOUND CONFIG AT:',  this.configPath);
-    console.log('CONFIG BASE DIR:', this.configBase);
-    console.log('YOUR LOCAL MODULE IS LOCATED:', this.modulePath);
-    console.log('LOCAL PACKAGE.JSON:', this.localPackage);
+Hacker.launch(function(env) {
+  if(env.argv.verbose) {
+    console.log('LIFTOFF SETTINGS:', env.liftoff);
+    console.log('CLI OPTIONS:', env.argv);
+    console.log('CWD:', env.cwd);
+    console.log('LOCAL MODULES PRELOADED:', env.preload);
+    console.log('EXTENSIONS RECOGNIZED:', env.validExtensions);
+    console.log('SEARCHING FOR:', env.configNameRegex);
+    console.log('FOUND CONFIG AT:',  env.configPath);
+    console.log('CONFIG BASE DIR:', env.configBase);
+    console.log('YOUR LOCAL MODULE IS LOCATED:', env.modulePath);
+    console.log('LOCAL PACKAGE.JSON:', env.localPackage);
     console.log('CLI PACKAGE.JSON', require('../package'));
   }
 
-  if(this.configPath) {
-    process.chdir(this.configBase);
-    require(this.configPath);
+  if(env.configPath) {
+    process.chdir(env.configBase);
+    require(env.configPath);
   } else {
-    console.log('No Hackfile found.');
+    console.log('No Hackerfile found.');
   }
 });
