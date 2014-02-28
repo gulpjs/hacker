@@ -9,7 +9,8 @@
 4. The rest is up to you.
 
 #### Options
-- `--cwd` specify the working directory to start looking for your Hackerfile
+- `--cwd` specify the working directory to run hacker
+- `--hackerfile` specify an exact hackerfile path
 - `--require` require an external module before loading your hackerfile (e.g. coffee-script)
 - `--verbose` show some debugging info about how hacker is working
 
