@@ -18,9 +18,11 @@ var Hacker = new Liftoff({
   console.log('Unable to load:', name, err);
 });
 
-Hacker.launch(function(env) {
+Hacker.launch(launcher);
+
+function launcher (env) {
   if(env.argv.verbose) {
-    console.log('LIFTOFF SETTINGS:', env.liftoff);
+    console.log('LIFTOFF SETTINGS:', this);
     console.log('CLI OPTIONS:', env.argv);
     console.log('CWD:', env.cwd);
     console.log('LOCAL MODULES PRELOADED:', env.preload);
@@ -29,7 +31,7 @@ Hacker.launch(function(env) {
     console.log('FOUND CONFIG AT:',  env.configPath);
     console.log('CONFIG BASE DIR:', env.configBase);
     console.log('YOUR LOCAL MODULE IS LOCATED:', env.modulePath);
-    console.log('LOCAL PACKAGE.JSON:', env.localPackage);
+    console.log('LOCAL PACKAGE.JSON:', env.modulePackage);
     console.log('CLI PACKAGE.JSON', require('../package'));
   }
 
@@ -39,4 +41,4 @@ Hacker.launch(function(env) {
   } else {
     console.log('No Hackerfile found.');
   }
-});
+}
