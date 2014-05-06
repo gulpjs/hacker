@@ -11,7 +11,7 @@
 #### Options
 - `--cwd` specify the working directory to run hacker
 - `--hackerfile` specify an exact hackerfile path
-- `--require` require an external module before loading your hackerfile (e.g. coffee-script)
+- `--require` require an external module before loading your hackerfile
 - `--verbose` show some debugging info about how hacker is working
 
 ### Examples
@@ -30,4 +30,4 @@ fs = require 'fs'
 fs.writeFileSync 'tmp', 'i will be written relative to this file, always.'
 ```
 To run:
-`hacker --require coffee-script`
+`hacker`

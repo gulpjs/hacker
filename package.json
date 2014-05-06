@@ -32,7 +32,8 @@
     "task runner"
   ],
   "dependencies": {
-    "liftoff": "~0.9.0"
+    "liftoff": "~0.10.0",
+    "interpret": "^0.3.0"
   },
   "devDependencies": {}
 }
