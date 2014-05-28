@@ -1,28 +1,33 @@
 #!/usr/bin/env node
-'use strict';
+const Liftoff = require('liftoff');
+const argv = require('minimist')(process.argv.slice(2));
 
-var Liftoff = require('liftoff');
-
-var Hacker = new Liftoff({
+const Hacker = new Liftoff({
   name: 'hacker',
-//  localDeps: ['hacker'],     // these are assigned
-//  configName: 'hackerfile',  // automatically by
-//  processTitle: 'hacker',    // the "name" option
-  extensions: require('interpret').extensions,
-  cwdOpt: 'cwd',
-  requireOpt: 'require'
+//  moduleName: 'hacker',     // these are assigned
+//  configName: 'hackerfile', // automatically by
+//  processTitle: 'hacker',   // the "name" option
+  extensions: require('interpret').extensions
 }).on('require', function (name, module) {
   console.log('Loading:',name);
 }).on('requireFail', function (name, err) {
   console.log('Unable to load:', name, err);
 });
 
-var launcher = function (env) {
-  if(env.argv.verbose) {
+Hacker.launch({
+  cwd: argv.cwd,
+  configPath: argv.hackerfile,
+  require: argv.require,
+  completion: argv.completion,
+  verbose: argv.verbose
+}, invoke);
+
+function invoke (env) {
+  if (argv.verbose) {
     console.log('LIFTOFF SETTINGS:', this);
-    console.log('CLI OPTIONS:', env.argv);
+    console.log('CLI OPTIONS:', argv);
     console.log('CWD:', env.cwd);
-    console.log('LOCAL MODULES PRELOADED:', env.preload);
+    console.log('LOCAL MODULES PRELOADED:', env.require);
     console.log('SEARCHING FOR:', env.configNameRegex);
     console.log('FOUND CONFIG AT:',  env.configPath);
     console.log('CONFIG BASE DIR:', env.configBase);
@@ -38,5 +43,3 @@ var launcher = function (env) {
     console.log('No Hackerfile found.');
   }
 }
-
-Hacker.launch(launcher);
