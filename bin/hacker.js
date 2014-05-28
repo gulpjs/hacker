@@ -7,7 +7,9 @@ const Hacker = new Liftoff({
 //  moduleName: 'hacker',     // these are assigned
 //  configName: 'hackerfile', // automatically by
 //  processTitle: 'hacker',   // the "name" option
-  extensions: require('interpret').extensions
+  extensions: require('interpret').jsVariants
+  // ^ automatically attempt to require module for any javascript variant
+  // supported by interpret.  e.g. coffee-script / livescript, etc
 }).on('require', function (name, module) {
   console.log('Loading:',name);
 }).on('requireFail', function (name, err) {
