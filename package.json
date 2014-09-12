@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "interpret": "~0.3.7",
-    "liftoff": "~0.13.0",
+    "liftoff": "~0.13.2",
     "minimist": "~1.1.0",
     "v8flags": "~1.0.1"
   },

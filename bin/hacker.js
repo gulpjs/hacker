@@ -16,8 +16,9 @@ const Hacker = new Liftoff({
   console.log('Loading:',name);
 }).on('requireFail', function (name, err) {
   console.log('Unable to load:', name, err);
-}).on('respawn', function (proc) {
-  console.log('Respawned to PID:', proc.pid);
+}).on('respawn', function (flags, child) {
+  console.log('Detected node flags:', flags);
+  console.log('Respawned to PID:', child.pid);
 });
 
 Hacker.launch({
