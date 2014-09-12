@@ -1,7 +1,7 @@
 {
   "name": "hacker",
   "description": "Hack on your project easily.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "homepage": "https://github.com/tkellen/node-hacker",
   "author": {
     "name": "Tyler Kellen",
@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "interpret": "~0.3.7",
-    "liftoff": "~0.13.0",
+    "liftoff": "~0.13.2",
     "minimist": "~1.1.0",
     "v8flags": "~1.0.1"
   },
