@@ -32,9 +32,10 @@
     "task runner"
   ],
   "dependencies": {
-    "interpret": "^0.3.0",
-    "liftoff": "^0.11.0",
-    "minimist": "^0.1.0"
+    "interpret": "~0.3.7",
+    "liftoff": "~0.13.0",
+    "minimist": "~1.1.0",
+    "v8flags": "~1.0.1"
   },
   "devDependencies": {}
 }
