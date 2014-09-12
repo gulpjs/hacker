@@ -7,13 +7,17 @@ const Hacker = new Liftoff({
 //  moduleName: 'hacker',     // these are assigned
 //  configName: 'hackerfile', // automatically by
 //  processTitle: 'hacker',   // the "name" option
-  extensions: require('interpret').jsVariants
+  extensions: require('interpret').jsVariants,
   // ^ automatically attempt to require module for any javascript variant
   // supported by interpret.  e.g. coffee-script / livescript, etc
+  nodeFlags: ['--harmony'] // to support all flags: require('v8flags').fetch();
+  // ^ respawn node with any flag listed here
 }).on('require', function (name, module) {
   console.log('Loading:',name);
 }).on('requireFail', function (name, err) {
   console.log('Unable to load:', name, err);
+}).on('respawn', function (proc) {
+  console.log('Respawned to PID:', proc.pid);
 });
 
 Hacker.launch({
@@ -25,6 +29,7 @@ Hacker.launch({
 }, invoke);
 
 function invoke (env) {
+
   if (argv.verbose) {
     console.log('LIFTOFF SETTINGS:', this);
     console.log('CLI OPTIONS:', argv);
