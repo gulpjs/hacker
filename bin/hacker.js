@@ -10,7 +10,7 @@ const Hacker = new Liftoff({
   extensions: require('interpret').jsVariants,
   // ^ automatically attempt to require module for any javascript variant
   // supported by interpret.  e.g. coffee-script / livescript, etc
-  v8flags: ['--harmony'] // to support all flags: require('v8flags').fetch();
+  v8flags: ['--harmony'] // to support all flags: require('v8flags');
   // ^ respawn node with any flag listed here
 }).on('require', function (name, module) {
   console.log('Loading:',name);
