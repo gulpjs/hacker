@@ -10,7 +10,7 @@ const Hacker = new Liftoff({
   extensions: require('interpret').jsVariants,
   // ^ automatically attempt to require module for any javascript variant
   // supported by interpret.  e.g. coffee-script / livescript, etc
-  v8flags: ['--harmony'] // to support all flags: require('v8flags');
+  v8flags: ['--harmony'] // to support all flags: require('v8flags') pull;
   // ^ respawn node with any flag listed here
 }).on('require', function (name, module) {
   console.log('Loading:',name);
@@ -44,8 +44,12 @@ function invoke (env) {
     console.log('CLI PACKAGE.JSON', require('../package'));
   }
 
-  if(env.configPath) {
-    process.chdir(env.configBase);
+  if (process.cwd() !== env.cwd) {
+    process.chdir(env.cwd);
+    console.log('Working directory changed to', env.cwd);
+  }
+
+  if (env.configPath) {
     require(env.configPath);
   } else {
     console.log('No Hackerfile found.');
