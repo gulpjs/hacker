@@ -49,6 +49,11 @@ function invoke (env) {
     console.log('Working directory changed to', env.cwd);
   }
 
+  if (!env.modulePath) {
+    console.log('Local hacker not found in:', env.cwd);
+    process.exit(1);
+  }
+
   if (env.configPath) {
     require(env.configPath);
   } else {
