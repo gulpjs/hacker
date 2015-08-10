@@ -50,13 +50,13 @@ function invoke (env) {
   }
 
   if (!env.modulePath) {
-    console.log('Local hacker not found in:', env.cwd);
+    console.log('Local ', Hacker.moduleName, ' module not found in: ', env.cwd);
     process.exit(1);
   }
 
   if (env.configPath) {
     require(env.configPath);
   } else {
-    console.log('No Hackerfile found.');
+    console.log('No ', Hacker.configName, ' found.');
   }
 }
