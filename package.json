@@ -1,7 +1,7 @@
 {
   "name": "hacker",
   "description": "Hack on your project easily.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/tkellen/node-hacker",
   "author": {
     "name": "Tyler Kellen",
