@@ -1,5 +1,14 @@
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
+
 # hacker
-> Hack on your project easily. A proof of concept for [node-liftoff](https://github.com/tkellen/node-liftoff).
+
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Gitter chat][gitter-image]][gitter-url]
+
+Hack on your project easily. A [liftoff](https://github.com/gulpjs/liftoff) proof-of-concept.
 
 ### How to use it
 
@@ -31,3 +40,20 @@ fs.writeFileSync 'tmp', 'i will be written relative to this file, always.'
 ```
 To run:
 `hacker`
+
+## License
+
+MIT
+
+[downloads-image]: http://img.shields.io/npm/dm/hacker.svg
+[npm-url]: https://www.npmjs.com/package/hacker
+[npm-image]: http://img.shields.io/npm/v/hacker.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/hacker
+[travis-image]: http://img.shields.io/travis/gulpjs/hacker.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/hacker
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/hacker.svg?label=appveyor
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

@@ -1,40 +1,45 @@
 {
   "name": "hacker",
-  "description": "Hack on your project easily.",
   "version": "1.1.2",
-  "homepage": "https://github.com/tkellen/node-hacker",
-  "author": {
-    "name": "Tyler Kellen",
-    "url": "http://goingslowly.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tkellen/node-hacker.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tkellen/node-hacker/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/tkellen/node-hacker/blob/master/LICENSE"
-    }
+  "description": "Hack on your project easily. A liftoff proof-of-concept.",
+  "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
+  "contributors": [
+    "Tyler Kellen <tyler@sleekcode.net>",
+    "Blaine Bublitz <blaine.bublitz@gmail.com>"
   ],
-  "main": "index.js",
+  "repository": "gulpjs/hacker",
+  "license": "MIT",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.10"
   },
+  "main": "index.js",
   "bin": {
     "hacker": "./bin/hacker.js"
   },
-  "keywords": [
-    "command line",
-    "task runner"
+  "files": [
+    "index.js",
+    "bin/",
+    "LICENSE"
   ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
   "dependencies": {
     "interpret": "~0.4.1",
     "liftoff": "~2.0.0",
     "minimist": "~1.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^2.13.0",
+    "eslint-config-gulp": "^3.0.1"
+  },
+  "keywords": [
+    "proof of concept",
+    "proof-of-concept",
+    "liftoff",
+    "cli",
+    "nodejs",
+    "flags"
+  ]
 }
