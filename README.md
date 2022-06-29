@@ -18,6 +18,7 @@ Hack on your project easily. A [liftoff](https://github.com/gulpjs/liftoff) proo
 4. The rest is up to you.
 
 #### Options
+
 - `--cwd` specify the working directory to run hacker
 - `--hackerfile` specify an exact hackerfile path
 - `--require` require an external module before loading your hackerfile
@@ -26,18 +27,22 @@ Hack on your project easily. A [liftoff](https://github.com/gulpjs/liftoff) proo
 ### Examples
 
 #### Hackerfile.js
+
 ```js
 var fs = require('fs');
-fs.writeFileSync('tmp','i will be written relative to this file, always.');
+fs.writeFileSync('tmp', 'i will be written relative to this file, always.');
 ```
+
 To run:
 `hacker`
 
 #### Hackerfile.coffee
+
 ```coffeescript
 fs = require 'fs'
 fs.writeFileSync 'tmp', 'i will be written relative to this file, always.'
 ```
+
 To run:
 `hacker`
 
