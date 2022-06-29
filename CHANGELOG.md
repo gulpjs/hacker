@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.0.1](https://www.github.com/gulpjs/hacker/compare/v3.0.0...v3.0.1) (2022-06-29)
+
+
+### Bug Fixes
+
+* Use correct URLs for badges ([bdedce0](https://www.github.com/gulpjs/hacker/commit/bdedce0cea92bc9a309b85a038602b8177301a6f))
+
 ## [3.0.0](https://www.github.com/gulpjs/hacker/compare/v2.0.0...v3.0.0) (2022-06-29)
 
 
