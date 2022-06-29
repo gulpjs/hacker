@@ -51,13 +51,13 @@ To run:
 MIT
 
 <!-- prettier-ignore-start -->
-[downloads-image]: https://img.shields.io/npm/dm/$PROJECT_NAME.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/$PROJECT_NAME
-[npm-image]: https://img.shields.io/npm/v/$PROJECT_NAME.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dm/hacker.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/hacker
+[npm-image]: https://img.shields.io/npm/v/hacker.svg?style=flat-square
 
-[ci-url]: https://github.com/gulpjs/$PROJECT_NAME/actions?query=workflow:dev
-[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/$PROJECT_NAME/dev?style=flat-square
+[ci-url]: https://github.com/gulpjs/hacker/actions?query=workflow:dev
+[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/hacker/dev?style=flat-square
 
-[coveralls-url]: https://coveralls.io/r/gulpjs/$PROJECT_NAME
-[coveralls-image]: https://img.shields.io/coveralls/gulpjs/$PROJECT_NAME/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/gulpjs/hacker
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/hacker/master.svg?style=flat-square
 <!-- prettier-ignore-end -->
