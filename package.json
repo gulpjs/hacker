@@ -2,7 +2,7 @@
   "name": "hacker",
   "version": "1.2.0",
   "description": "Hack on your project easily. A liftoff proof-of-concept.",
-  "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
+  "author": "Gulp Team <team@gulpjs.com> (https://gulpjs.com/)",
   "contributors": [
     "Tyler Kellen <tyler@sleekcode.net>",
     "Blaine Bublitz <blaine.bublitz@gmail.com>"
@@ -10,7 +10,7 @@
   "repository": "gulpjs/hacker",
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10"
+    "node": ">=10.13.0"
   },
   "main": "index.js",
   "bin": {
@@ -23,16 +23,29 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint"
+    "test": "nyc mocha --async-only"
   },
   "dependencies": {
-    "interpret": "~0.4.1",
-    "liftoff": "~2.0.0",
-    "minimist": "~1.1.0"
+    "interpret": "^3.1.1",
+    "liftoff": "^4.0.0",
+    "minimist": "^1.2.6"
   },
   "devDependencies": {
-    "eslint": "^2.13.0",
-    "eslint-config-gulp": "^3.0.1"
+    "eslint": "^7.0.0",
+    "eslint-config-gulp": "^5.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "expect": "^27.0.0",
+    "mocha": "^8.0.0",
+    "nyc": "^15.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "keywords": [
     "proof of concept",

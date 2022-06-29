@@ -6,7 +6,7 @@
 
 # hacker
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Gitter chat][gitter-image]][gitter-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][ci-image]][ci-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 
 Hack on your project easily. A [liftoff](https://github.com/gulpjs/liftoff) proof-of-concept.
 
@@ -45,15 +45,14 @@ To run:
 
 MIT
 
-[downloads-image]: http://img.shields.io/npm/dm/hacker.svg
-[npm-url]: https://www.npmjs.com/package/hacker
-[npm-image]: http://img.shields.io/npm/v/hacker.svg
+<!-- prettier-ignore-start -->
+[downloads-image]: https://img.shields.io/npm/dm/$PROJECT_NAME.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/$PROJECT_NAME
+[npm-image]: https://img.shields.io/npm/v/$PROJECT_NAME.svg?style=flat-square
 
-[travis-url]: https://travis-ci.org/gulpjs/hacker
-[travis-image]: http://img.shields.io/travis/gulpjs/hacker.svg?label=travis-ci
+[ci-url]: https://github.com/gulpjs/$PROJECT_NAME/actions?query=workflow:dev
+[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/$PROJECT_NAME/dev?style=flat-square
 
-[appveyor-url]: https://ci.appveyor.com/project/gulpjs/hacker
-[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/hacker.svg?label=appveyor
-
-[gitter-url]: https://gitter.im/gulpjs/gulp
-[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg
+[coveralls-url]: https://coveralls.io/r/gulpjs/$PROJECT_NAME
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/$PROJECT_NAME/master.svg?style=flat-square
+<!-- prettier-ignore-end -->

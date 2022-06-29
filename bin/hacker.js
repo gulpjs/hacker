@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 var Liftoff = require('liftoff');
-var argv = require('minimist')(process.argv.slice(2));
+var minimist = require('minimist');
+
+var argv = minimist(process.argv.slice(2));
 
 var Hacker = new Liftoff({
   name: 'hacker',
@@ -12,24 +14,35 @@ var Hacker = new Liftoff({
   // supported by interpret.  e.g. coffee-script / livescript, etc
   v8flags: ['--harmony'], // to support all flags: require('v8flags')
   // ^ respawn node with any flag listed here
-}).on('require', function(name, module) {
-  console.log('Loading:', name);
-}).on('requireFail', function(name, err) {
-  console.log('Unable to load:', name, err);
-}).on('respawn', function(flags, child) {
-  console.log('Detected node flags:', flags);
-  console.log('Respawned to PID:', child.pid);
-});
+})
+  .on('loader:success', function (name, module) {
+    console.log('Loaded:', name);
+  })
+  .on('loader:failure', function (name, err) {
+    console.log('Unable to load:', name);
+    if (argv.verbose) {
+      console.error(err);
+    }
+  })
+  .on('respawn', function (flags, child) {
+    console.log('Detected node flags:', flags);
+    console.log('Respawned to PID:', child.pid);
+  });
 
-Hacker.launch({
-  cwd: argv.cwd,
-  configPath: argv.hackerfile,
-  require: argv.require,
-  completion: argv.completion,
-  verbose: argv.verbose,
-}, invoke);
+Hacker.prepare(
+  {
+    cwd: argv.cwd,
+    configPath: argv.hackerfile,
+    preload: argv.preload,
+    completion: argv.completion,
+  },
+  function (env) {
+    Hacker.execute(env, invoke);
+  }
+);
 
-function invoke(env) {
+function invoke(env, argv) {
+  argv = minimist(argv);
 
   if (argv.verbose) {
     console.log('LIFTOFF SETTINGS:', this);
@@ -50,13 +63,15 @@ function invoke(env) {
   }
 
   if (!env.modulePath) {
-    console.log('Local ', Hacker.moduleName, ' module not found in: ', env.cwd);
+    console.log(
+      'Local ' + Hacker.moduleName + ' module not found in: ' + env.cwd
+    );
     process.exit(1);
   }
 
   if (env.configPath) {
     require(env.configPath);
   } else {
-    console.log('No ', Hacker.configName, ' found.');
+    console.log('No ' + Hacker.configName + ' found.');
   }
 }
