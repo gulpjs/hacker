@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://www.github.com/gulpjs/hacker/compare/v2.0.0...v3.0.0) (2022-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Release version that does not exist
+
+### Miscellaneous Chores
+
+* Release version that does not exist ([dcc4175](https://www.github.com/gulpjs/hacker/commit/dcc4175c169ab1829c720dcba74d5befc8b534b4))
+
 ## [2.0.0](https://www.github.com/gulpjs/hacker/compare/v1.2.0...v2.0.0) (2022-06-29)
 
 
