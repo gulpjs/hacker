@@ -29,8 +29,8 @@ Hack on your project easily. A [liftoff](https://github.com/gulpjs/liftoff) proo
 #### Hackerfile.js
 
 ```js
-var fs = require('fs');
-fs.writeFileSync('tmp', 'i will be written relative to this file, always.');
+var fs = require("fs");
+fs.writeFileSync("tmp", "i will be written relative to this file, always.");
 ```
 
 To run:
