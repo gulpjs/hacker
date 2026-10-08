@@ -15,7 +15,7 @@ var Hacker = new Liftoff({
   v8flags: ["--harmony"], // to support all flags: require('v8flags')
   // ^ respawn node with any flag listed here
 })
-  .on("loader:success", function (name, module) {
+  .on("loader:success", function (name) {
     console.log("Loaded:", name);
   })
   .on("loader:failure", function (name, err) {

@@ -18,7 +18,7 @@
   },
   "main": "./index.js",
   "bin": {
-    "hacker": "bin/hacker.js"
+    "hacker": "./bin/hacker.js"
   },
   "files": [
     "index.js",
