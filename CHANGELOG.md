@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/gulpjs/hacker/compare/v3.0.1...v4.0.0) (2026-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Normalize repository, dropping Node <22.15.0 ([#9](https://github.com/gulpjs/hacker/issues/9))
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping Node &lt;22.15.0 ([#9](https://github.com/gulpjs/hacker/issues/9)) ([67ebbe8](https://github.com/gulpjs/hacker/commit/67ebbe88f4bcdbb5405c7638307f5e5b0e4914e1))
+
 ### [3.0.1](https://www.github.com/gulpjs/hacker/compare/v3.0.0...v3.0.1) (2022-06-29)
 
 
